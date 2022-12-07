@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import '../../App.css'
 import AdBanner from './AdBanner'
+import RecipeCard from './RecipeCard'
 import axios from 'axios'
 
 const HomeScreen = () => {
   const devMtnURL = 'https://recipes.devmountain.com'
   const [recipes, setRecipes] = useState({})
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     axios
@@ -18,9 +21,16 @@ const HomeScreen = () => {
   [])
 
   return (
-    <div>
+    <div className='home-container'>
       <AdBanner />
-      {/* Much code from Part 2 will be placed around here. Do your best! */}
+      
+      <div className="search">
+        <input type="text" placeholder='Search for a Recipe' />
+      </div>
+
+      <div className="cards-container">
+        <RecipeCard />
+      </div>
     </div>
   )
 }

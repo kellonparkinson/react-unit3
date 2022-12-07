@@ -30,6 +30,11 @@ body {
 	min-height: 100vh;
 }
 
+.App {
+	height: 100%;
+	width: 100%;
+}
+
 header {
 	width: 100%;
 	height: 65px;
@@ -90,7 +95,7 @@ footer {
 		width: 45px;
 		height: 45px;
 		border-radius: 50%;
-		background-color: rgb(111, 169, 172);
+		background-color: #59949d;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -98,4 +103,94 @@ footer {
 
 	.footer-logo {
 		margin-right: 50px;
+	}
+
+/* Home screen, ad banner */
+.home-container {
+	width: 100%;
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.adbanner-container {
+	width: 100%;
+	height: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.adbanner-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 55%;
+	text-align: center;
+}
+
+	.adbanner-info h3 {
+		color: #fff;
+		font-family: sans-serif;
+		font-size: 24px;
+	}
+
+	.adbanner-info h1 {
+		color: #ff9a56;
+		font-size: 64px;
+		font-family: sans-serif;
+		font-weight: 600;
+		margin: 20px 0;
+	}
+
+	.blue-btn {
+		background-color: #59949d;
+		color: #fff;
+		border: none;
+		width: 120px;
+		height: 50px;
+		margin-top: 30px;
+		font-size: 18px;
+	}
+
+.home-container input {
+	border: none;
+	border-radius: 25px;
+	height: 50px;
+	width: 300px;
+	background-color: #ffcba8;
+	padding-left: 20px;
+	font-size: 16px;
+	margin-top: 20px;
+}
+
+	.home-container input::placeholder {
+		color: #00000052;
+	}
+
+/* Recipe Cards */
+.cards-container {
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 20px 0;
+}
+.recipe-card {
+	width: 25%;
+	height: 50%;
+	margin: 20px;
+	box-shadow: 5px 5px 20px #67686a;
+	border-radius: 4px;
+}
+
+	.recipe-card img {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+		border-radius: 4px 4px 0 0;
 	}
