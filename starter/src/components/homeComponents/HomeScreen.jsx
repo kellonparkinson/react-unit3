@@ -3,6 +3,7 @@ import '../../App.css'
 import AdBanner from './AdBanner'
 import RecipeCard from './RecipeCard'
 import axios from 'axios'
+import { BiSearch } from 'react-icons/bi'
 
 const HomeScreen = () => {
   const devMtnURL = 'https://recipes.devmountain.com'
@@ -20,16 +21,32 @@ const HomeScreen = () => {
   },
   [])
 
+  const recipeDisplay = recipes.filter(
+    (recipe, index) => {
+        let title = recipe.recipe_name.toLowerCase()
+        let searchParams = search.toLowerCase()
+        return title.includes(searchParams)
+    }).map(
+      (recipe, index) => {
+        return <RecipeCard recipe={recipe}/>
+    })
+
   return (
     <div className='home-container'>
       <AdBanner />
       
       <div className="search">
-        <input type="text" placeholder='Search for a Recipe' />
+        <BiSearch />
+        <input
+          type="text"
+          placeholder='Search for a Recipe'
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
       </div>
 
       <div className="cards-container">
-        <RecipeCard />
+        {search !== '' ? recipeDisplay : null}
       </div>
     </div>
   )

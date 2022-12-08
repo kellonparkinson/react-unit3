@@ -1,11 +1,11 @@
 import React from 'react'
 import '../../App.css'
 
-const RecipeCard = () => {
+const RecipeCard = ({ recipe }) => {
   return (
     <div className='recipe-card'>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Cup-Noodles-2.jpg" alt="noodles" />
-        <h3>Recipe Title, recipe title, recipe title</h3>
+        <img src={recipe.image_url} alt={recipe.type} />
+        <h3>{recipe.recipe_name}</h3>
         <button>See More</button>
     </div>
   )
