@@ -7,7 +7,7 @@ import { BiSearch } from 'react-icons/bi'
 
 const HomeScreen = () => {
   const devMtnURL = 'https://recipes.devmountain.com'
-  const [recipes, setRecipes] = useState({})
+  const [recipes, setRecipes] = useState([])
   const [search, setSearch] = useState('')
 
   useEffect(() => {
