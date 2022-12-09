@@ -3,11 +3,11 @@ import React from "react";
 const NewRecipeScreen = () => {
   return (
     <section className="new-recipe-container">
-      <h1>Tell us about your Recipe!</h1>
-      <form>
+      <h1>Tell us about your recipe!</h1>
+      <form className="recipe-form">
         <div className="name-image">
-          <input type="text" />
-          <input type="text" />
+          <input type="text" placeholder="Name"/>
+          <input type="text" placeholder="Image URL"/>
         </div>
 
         <div className="radio">
@@ -23,21 +23,36 @@ const NewRecipeScreen = () => {
         </div>
 
         <div className="form-info">
-          <input type="text" />
-          <input type="text" />
-          <input type="text" />
+          <input type="text" placeholder="Prep Time"/>
+          <input type="text" placeholder="Cook Time"/>
+          <input type="text" placeholder="Serves"/>
         </div>
 
         <div className="form-ingredients">
-          <input type="text" />
-          <input type="text" />
-        </div>
-        <button>Add Another</button>
+          <div className="ing-container">
 
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+            <div className="left">
+              <input type="text" placeholder="Ingredient"/>
+              <input type="text" placeholder="Quantity"/>
+            </div>
+
+            <div className="right">
+              <ul>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+              </ul>
+            </div>
+          </div>
+
+          <button className="add-btn">Add Another</button>
+        </div>
+
+        <textarea name="" id="" cols="61" rows="9" placeholder="What are the instructions?"></textarea>
+        <button type='submit' className="save-btn">Save</button>
       </form>
     </section>
   );
 };
 
-export default NewRecipeScreen;
+export default NewRecipeScreen
