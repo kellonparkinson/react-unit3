@@ -22,7 +22,7 @@ const DetailScreen = () => {
       <div className="recipe-image"
         style={{
           background: `linear-gradient(190deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${recipe.image_url})`,
-          backgroundSize: "fill"
+          backgroundSize: 'cover'
         }}>
           <h1>{recipe.recipe_name}</h1>
       </div>
@@ -33,12 +33,18 @@ const DetailScreen = () => {
           <p>Prep Time: {recipe.prep_time}</p>
           <p>Cook Time: {recipe.cook_time}</p>
           <p>Serves: {recipe.serves}</p>
+          
           <h1>Ingredients</h1>
-          <p>whoa</p>
+            {recipe.ingredients && recipe.ingredients.map((item) => {
+              return <p>{item.quantity} {item.ingredient}</p>
+            })}
         </div>
+
         <div className="instructions">
           <h1>Instructions</h1>
-          <p>All instructions, isdhf oihef osdnfdsojn fsiofg okdsfn sok gsokhfg of gifvnu vushviruvb dfviuhsiufh siruhv sfjbn sruf sfiuvb fusvhs urijsfvhiusfhv ijsbfib viu, isdhf oihef osdnfdsojn fsiofg okdsfn sok gsokhfg of gifvnu vushviruvb dfviuhsiufh siruhv sfjbn sruf sfiuvb fusvhs urijsfvhiusfhv ijsbfib viu, isdhf oihef osdnfdsojn fsiofg okdsfn sok gsokhfg of gifvnu vushviruvb dfviuhsiufh siruhv sfjbn sruf sfiuvb fusvhs urijsfvhiusfhv ijsbfib viu, isdhf oihef osdnfdsojn fsiofg okdsfn sok gsokhfg of gifvnu vushviruvb dfviuhsiufh siruhv sfjbn sruf sfiuvb fusvhs urijsfvhiusfhv ijsbfib viu. </p>
+          <p style={{whiteSpace: 'pre-wrap'}}>
+            {recipe.instructions && JSON.parse(recipe.instructions)}
+          </p>
         </div>
       </div>
     </section>
